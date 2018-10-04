@@ -25,8 +25,18 @@ public class BankAccount{
   public int getAccountID(){
     return accountID;
   }
+  //For testing purposes:
+  public String getPassword(){
+    return password;
+  }
 
   //4. set method for password
+  /*Change the value of password to the specified value
+   *@param newPass The value to replace the old password with*/
+  public void setPassword(String newPass){
+    password = newPass;
+  }
+
   //5a. A method to deposit money into the account. It should accept an amount of money,
       //and increase the account balance by that much and return true. This should not apply
       //a negative deposit, instead it should leave the balance unchanged and returning false.
@@ -41,10 +51,6 @@ public class BankAccount{
       //}else{
           //println("Withdrawal failure");
       //}
-
-/*Change the value of password to the specified value
- *@param newPass The value to replace the old password with*/
-  //public void setPassword(String newPass){...}
 
 /*When amount is positive: Increase balance by amount and return true.
  *@return When amount is positive: Return true, otherwise return false.

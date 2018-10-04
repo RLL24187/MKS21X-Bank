@@ -4,5 +4,8 @@ public class Driver{
     System.out.println(a.toString());
     System.out.println(a.getAccountID());
     System.out.println(a.getBalance());
+    System.out.println(a.getPassword());
+    a.setPassword("B3773rP455w0rd");
+    System.out.println(a.getPassword());
   }
 }
