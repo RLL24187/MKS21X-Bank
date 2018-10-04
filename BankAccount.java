@@ -55,22 +55,15 @@ public class BankAccount{
   //5b. Method to withdraw money from the account and return true if it was successful,
       //false otherwise. This will not be successful if the balance is too low, in which case
       //the action does not change the balance.
-  //6. A main method (included in the same file) to test your code.
-      //Since withdraw and deposit return booleans. We can use them as follows:
-      //hint:
-      //if( var.withdraw(1000) ){
-          //println("Withdrawal success!");
-      //}else{
-          //println("Withdrawal failure");
-      //}
-
-
-/*When amount is positive and the amount is at least as much as the balance:
- *Decrease balance by amount if the balance is large enough.
- *Make no change if the amount is too large to withdraw
- *@param amount The amount is how much to change the balance by.
- *@return true when the balance is large enough, false otherwise.
- */
-  //public boolean withdraw(double amount){... }
-
+  /*When amount is positive and the amount is at least as much as the balance:
+       *Decrease balance by amount if the balance is large enough.
+       *Make no change if the amount is too large to withdraw
+       *@param amount The amount is how much to change the balance by.
+       *@return true when the balance is large enough, false otherwise.
+       */
+  public boolean withdraw(double amount){
+    if (amount < 0 || balance < amount) return false;
+    balance += amount;
+    return true;
+  }
 }
