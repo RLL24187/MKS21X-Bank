@@ -40,6 +40,18 @@ public class BankAccount{
   //5a. A method to deposit money into the account. It should accept an amount of money,
       //and increase the account balance by that much and return true. This should not apply
       //a negative deposit, instead it should leave the balance unchanged and returning false.
+  /*When amount is positive: Increase balance by amount and return true.
+       *@return When amount is positive: Return true, otherwise return false.
+       *@param amount The amount is how much to change the balance by.
+       */
+  public boolean deposit(double amount){
+    if (amount >= 0){
+      balance += amount;
+      return true;
+    }
+    return false;
+  }
+
   //5b. Method to withdraw money from the account and return true if it was successful,
       //false otherwise. This will not be successful if the balance is too low, in which case
       //the action does not change the balance.
@@ -52,11 +64,6 @@ public class BankAccount{
           //println("Withdrawal failure");
       //}
 
-/*When amount is positive: Increase balance by amount and return true.
- *@return When amount is positive: Return true, otherwise return false.
- *@param amount The amount is how much to change the balance by.
- */
-  //public boolean deposit(double amount){...}
 
 /*When amount is positive and the amount is at least as much as the balance:
  *Decrease balance by amount if the balance is large enough.
