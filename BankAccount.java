@@ -70,8 +70,6 @@ public class BankAccount{
   }
   /*This private method will allow internal methods to check the password easily*/
 private boolean authenticate(String password){
-  System.out.println(getPassword());
-  System.out.println(password);
   if ((getPassword()).equals(password)) {
     return true;
   }
@@ -83,5 +81,14 @@ private boolean authenticate(String password){
  *@param password to be checked against the source account, incorrect password will make this operation fail.
  *@return true if successful, false otherwise.
  */
-//public boolean transferTo(BankAccount other, double amount, String password)
+  public boolean transferTo(BankAccount other, double amount, String password){
+    if (this.authenticate(password) && this.withdraw(amount)) {
+      other.deposit(amount);
+      this.withdraw(amount);
+      System.out.println("Successfully transferred " + amount + " to " + other + "!");
+      return true;
+    }
+    System.out.println("Failed to transfer " + amount + " to " + other + ".");
+    return false;
+  }
 }

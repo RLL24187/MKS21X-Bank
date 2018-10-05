@@ -3,6 +3,7 @@ public class Driver{
   //6. A main method (included in the same file) to test your code.
 
     BankAccount a = new BankAccount(1234.05, 1234567890, "iLikeThisPassword ");
+    BankAccount b = new BankAccount(200000.50, 291097, "blah");
     //Testing the constructor and accessor methods
     System.out.println(a.toString());
     System.out.println(a.getAccountID());
@@ -49,5 +50,10 @@ public class Driver{
     System.out.println(a.authenticate("iLikeThisPassword"));
     System.out.println(a.authenticate("incorrect"));
     System.out.println(a.authenticate("B3773rP455w0rd"));*/
+
+    System.out.println(b.transferTo(a, 200.90, "blah")); //Should get true and be successful
+    System.out.println(b.transferTo(a,-19.29, "blah")); //Test for negative, should get false
+    System.out.println(b.transferTo(a, 30000000000000.00, "blah")); //Test for too large of a value, should get false
+    System.out.println(b.transferTo(a, 402.75, "blehk")); //Test for wrong password, should get false
   }
 }
