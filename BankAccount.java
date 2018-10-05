@@ -4,9 +4,9 @@ public class BankAccount{
   private int accountID; //the account number, an integer
   private String password;/*Sole constructor requires all field's values*/
   //1. A constructor: Should accept values for EACH of the instance variables
-   public BankAccount(int OrigaccountID, double Origbalance, String Origpassword){
-    accountID = OrigaccountID;
+   public BankAccount(double Origbalance, int OrigaccountID, String Origpassword){
     balance = Origbalance;
+    accountID = OrigaccountID;
     password = Origpassword;
   }
   /*Return a String to be used to display the account data. "ACCOUNT\tBALANCE" */
@@ -62,8 +62,10 @@ public class BankAccount{
        *@return true when the balance is large enough, false otherwise.
        */
   public boolean withdraw(double amount){
-    if (amount < 0 || balance < amount) return false;
-    balance += amount;
-    return true;
+    if (amount > 0 & balance > amount) {
+      balance -= amount;
+      return true;
+    }
+    return false;
   }
 }

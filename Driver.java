@@ -2,7 +2,7 @@ public class Driver{
   public static void main(String[]args){
   //6. A main method (included in the same file) to test your code.
 
-    BankAccount a = new BankAccount(1234567890, 1234.05, "iLikeThisPassword ");
+    BankAccount a = new BankAccount(1234.05, 1234567890, "iLikeThisPassword ");
     //Testing the constructor and accessor methods
     System.out.println(a.toString());
     System.out.println(a.getAccountID());
@@ -43,7 +43,7 @@ public class Driver{
         System.out.println("Withdrawal success!");
     }else{
         System.out.println("Withdrawal failure!");
-    }  
+    }
     System.out.println(a.getBalance());
   }
 }
