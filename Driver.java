@@ -45,5 +45,9 @@ public class Driver{
         System.out.println("Withdrawal failure!");
     }
     System.out.println(a.getBalance());
+    /* The below was used to test authenticate() and can only be used when authenticate is made public.
+    System.out.println(a.authenticate("iLikeThisPassword"));
+    System.out.println(a.authenticate("incorrect"));
+    System.out.println(a.authenticate("B3773rP455w0rd"));*/
   }
 }
